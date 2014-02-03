@@ -945,7 +945,7 @@ nav#mainNav  .active{
 
 .testimoniaContainer blockquote {
     font-family: 'Bad Script', cursive;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 40px;
     text-transform:none;
 }
@@ -3226,5 +3226,5 @@ input[type="checkbox"] + .checkbox-label:empty:before {
 
 .link {
     position:relative;
-    top:66px;
+    top:-66px;
 }
