@@ -139,7 +139,7 @@ $('.facts').appear(function() {
 		from: 0,
 		to: counter,
 		speed: 2000,
-		refreshInterval: 60,
+		refreshInterval: 60
 		});
 	});
 });
@@ -153,6 +153,23 @@ $('.facts').appear(function() {
 
 
 //---------------------------------- Form validation-----------------------------------------//
+
+
+
+    function removeModal(element, hasPerspective ) {
+        classie.remove( element, 'md-show' );
+
+        if( hasPerspective ) {
+            classie.remove( document.documentElement, 'md-perspective' );
+        }
+    }
+
+    function removeModalHandler(removeEl) {
+        var modal = document.querySelector( '#' + removeEl );
+        [].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i ) {
+        removeModal(modal, classie.has( el, 'md-setperspective' ) );
+        });
+    }
 
 function isFieldBlank(field){
     if(institution == "" || institution == " ") {
@@ -259,7 +276,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             },
             success: function(message) {
                alert('Your message has been sent. Thank you!');
-
+                removeModalHandler("modal-2");
                 if(message == 'SENDING'){
                     $('#success').fadeIn('slow');
                 }
@@ -371,7 +388,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             },
             success: function(message) {
                 alert('Your message has been sent. Thank you!');
-
+                removeModalHandler("modal-1");
                 if(message == 'SENDING'){
                     $('#success').fadeIn('slow');
                 }
@@ -483,7 +500,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             },
             success: function(message) {
                 alert('Your message has been sent. Thank you!');
-
+                removeModalHandler("modal-3");
                 if(message == 'SENDING'){
                     $('#success').fadeIn('slow');
                 }
@@ -598,7 +615,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             },
             success: function(message) {
                 alert('Your message has been sent. Thank you!');
-
+                removeModalHandler("modal-4");
                 if(message == 'SENDING'){
                     $('#success').fadeIn('slow');
                 }
@@ -708,6 +725,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             },
             success: function(message) {
                 alert('Your message has been sent. Thank you!');
+                removeModalHandler("modal-5");
 
                 if(message == 'SENDING'){
                     $('#success').fadeIn('slow');
@@ -785,6 +803,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             },
             success: function(message) {
                 alert('Your message has been sent. Thank you!');
+                removeModalHandler("modal-6");
 
                 if(message == 'SENDING'){
                     $('#success').fadeIn('slow');

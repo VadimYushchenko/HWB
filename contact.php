@@ -73,8 +73,7 @@ function form2(){
     $files_upload = uploadFile('documents2');
 
 
-
-    $subject = "Application form for financial support Patient’s profile";
+    $subject = "Application form for financial support Patient's profile";
 
     $message = '<html><head><title>'+$subject+'</title></head><body>';
 
@@ -97,7 +96,7 @@ function form2(){
 function form3(){
     $files_upload = uploadFile('documents3');
 
-    $subject = "Application form  for  ’’ imported material” transporting  assistance";
+    $subject = "Application form  for  \"imported material\" transporting  assistance";
     $message = '<html><head><title>'+$subject+'</title></head><body>';
     $message .= "<br><b>Last,first and middle name of a  contact person:</b> ".$_POST["fio3"];
     $message .= "<br><b>Contact information:</b> ".$_POST["contact3"];
@@ -134,7 +133,7 @@ function form5(){
     $files_upload = uploadFile('documents5');
 
 
-    $subject = "Donor’s application form";
+    $subject = "Donor's application form";
     $message = '<html><head><title>'+$subject+'</title></head><body>';
     $message .= "<br><b>Last, first and middle  name of patient’s representative,donor:</b> ".$_POST["fio5"];
     $message .= "<br><b>Contact information, country of living:</b> ".$_POST["contact5"];
@@ -249,8 +248,8 @@ function uploadFile($name){
     for($i=0;$i<$_POST["filecount"];$i++){
 
         if (move_uploaded_file($_FILES[$name]['tmp_name'][$i], $uploaddir .
-            $_FILES['documents1']['name'][$i])) {
-            array_push($files_upload,$_FILES['documents1']['name'][$i]);
+            $_FILES[$name]['name'][$i])) {
+            array_push($files_upload,$_FILES[$name]['name'][$i]);
         } else {
 
         }
