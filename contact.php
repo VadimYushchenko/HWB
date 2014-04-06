@@ -24,6 +24,8 @@ if($_POST["type"] == 1){
     form5();
 }elseif($_POST["type"] == 6){
     form6();
+}elseif($_POST["type"] == 7){
+    form7();
 }
 
 
@@ -164,6 +166,20 @@ function form6(){
     $message .= "<br><b>Date:</b> ".date("d.m.Y H:i:s");
     sendMulo("no-reply@hwb.uk.com",$subject,$message,null);
 }
+
+function form7(){
+
+
+    $subject = $_POST["contact_subject"];
+    $message = '<html><head><title>'+$subject+'</title></head><body>';
+    $message .= "<br><b>Name:</b> ".$_POST["contact_name"];
+    $message .= "<br><b>Email:</b> ".$_POST["contact_email"];
+    $message .= "<br><b>Subject:</b> ".$_POST["contact_subject"];
+    $message .= "<br><b>Message:</b> ".$_POST["contact_message"];
+    $message .= "<br><b>Date:</b> ".date("d.m.Y H:i:s");
+    sendMulo($_POST["contact_email"],$subject,$message,null);
+}
+
 
 function send_mail_attachment( $from, $to, $subj, $text, $filenames) {
 

@@ -277,12 +277,12 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             success: function(message) {
                alert('Your message has been sent. Thank you!');
                 removeModalHandler("modal-2");
-                if(message == 'SENDING'){
-                    $('#success').fadeIn('slow');
-                }
-                else{
-                    $('#error').fadeIn('slow');
-                }
+//                if(message == 'SENDING'){
+//                    $('#success').fadeIn('slow');
+//                }
+//                else{
+//                    $('#error').fadeIn('slow');
+//                }
             }
         });
 
@@ -389,12 +389,12 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             success: function(message) {
                 alert('Your message has been sent. Thank you!');
                 removeModalHandler("modal-1");
-                if(message == 'SENDING'){
-                    $('#success').fadeIn('slow');
-                }
-                else{
-                    $('#error').fadeIn('slow');
-                }
+//                if(message == 'SENDING'){
+//                    $('#success').fadeIn('slow');
+//                }
+//                else{
+//                    $('#error').fadeIn('slow');
+//                }
             }
         });
 
@@ -501,12 +501,12 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             success: function(message) {
                 alert('Your message has been sent. Thank you!');
                 removeModalHandler("modal-3");
-                if(message == 'SENDING'){
-                    $('#success').fadeIn('slow');
-                }
-                else{
-                    $('#error').fadeIn('slow');
-                }
+//                if(message == 'SENDING'){
+//                    $('#success').fadeIn('slow');
+//                }
+//                else{
+//                    $('#error').fadeIn('slow');
+//                }
             }
         });
 
@@ -616,12 +616,12 @@ formData.append("filecount",document.getElementById('documents1').files.length);
             success: function(message) {
                 alert('Your message has been sent. Thank you!');
                 removeModalHandler("modal-4");
-                if(message == 'SENDING'){
-                    $('#success').fadeIn('slow');
-                }
-                else{
-                    $('#error').fadeIn('slow');
-                }
+//                if(message == 'SENDING'){
+//                    $('#success').fadeIn('slow');
+//                }
+//                else{
+//                    $('#error').fadeIn('slow');
+//                }
             }
         });
 
@@ -727,12 +727,12 @@ formData.append("filecount",document.getElementById('documents1').files.length);
                 alert('Your message has been sent. Thank you!');
                 removeModalHandler("modal-5");
 
-                if(message == 'SENDING'){
-                    $('#success').fadeIn('slow');
-                }
-                else{
-                    $('#error').fadeIn('slow');
-                }
+//                if(message == 'SENDING'){
+//                    $('#success').fadeIn('slow');
+//                }
+//                else{
+//                    $('#error').fadeIn('slow');
+//                }
             }
         });
 
@@ -805,12 +805,12 @@ formData.append("filecount",document.getElementById('documents1').files.length);
                 alert('Your message has been sent. Thank you!');
                 removeModalHandler("modal-6");
 
-                if(message == 'SENDING'){
-                    $('#success').fadeIn('slow');
-                }
-                else{
-                    $('#error').fadeIn('slow');
-                }
+//                if(message == 'SENDING'){
+//                    $('#success').fadeIn('slow');
+//                }
+//                else{
+//                    $('#error').fadeIn('slow');
+//                }
             }
         });
 
@@ -820,32 +820,32 @@ formData.append("filecount",document.getElementById('documents1').files.length);
 
     $('#submit').click(function(){
 
-	$('input#name').removeClass("errorForm");
-	$('textarea#message').removeClass("errorForm");
-	$('input#email').removeClass("errorForm");
+	$('input#contact_name').removeClass("errorForm");
+	$('textarea#contact_message').removeClass("errorForm");
+	$('input#contact_email').removeClass("errorForm");
 	
 	var error = false; 
-	var name = $('input#name').val(); 
+	var name = $('input#contact_name').val();
 	if(name == "" || name == " ") { 
 		error = true; 
-		$('input#name').addClass("errorForm");
+		$('input#contact_name').addClass("errorForm");
 	}
 	
 	
-		var msg = $('textarea#message').val(); 
+		var msg = $('textarea#contact_message').val();
 		if(msg == "" || msg == " ") {
 			error = true;
-			$('textarea#message').addClass("errorForm");
+			$('textarea#contact_message').addClass("errorForm");
 			
 		}
 	
 	var email_compare = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i; 
-	var email = $('input#email').val(); 
+	var email = $('input#contact_email').val();
 	if (email == "" || email == " ") { 
-		$('input#email').addClass("errorForm");
+		$('input#contact_email').addClass("errorForm");
 		error = true;
 	}else if (!email_compare.test(email)) { 
-		$('input#email').addClass("errorForm");
+		$('input#contact_email').addClass("errorForm");
 		error = true;
 	}
 
@@ -862,12 +862,13 @@ formData.append("filecount",document.getElementById('documents1').files.length);
 		data: data_string,
 		
 		success: function(message) {
-				if(message == 'SENDING'){
-					$('#success').fadeIn('slow');
-				}
-				else{
-					$('#error').fadeIn('slow');
-				}
+            alert('Your message has been sent. Thank you!');
+//				if(message == 'SENDING'){
+//					$('#success').fadeIn('slow');
+//				}
+//				else{
+//					$('#error').fadeIn('slow');
+//				}
 					}
 					
 					
