@@ -602,7 +602,7 @@ nav#mainNav  .active{
 }
 
 
-.process p, .feature p{
+.service p, .process p, .feature p{
 	font-size:14px;
     color: #999999;
 }
