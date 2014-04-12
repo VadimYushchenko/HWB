@@ -1517,8 +1517,8 @@ ul#category li a:hover{
     display: inline-block;
 	display: block;
     height: auto;
-    width: 335px;
-	height:250px;
+    width: 245px;
+	height:185px;
 }
 
 
@@ -2694,7 +2694,7 @@ input[type="checkbox"] + .checkbox-label:empty:before {
 
 /*Landscape 1024 X 600 */
 
-@media only screen and (min-width: 1000px) and (max-width: 1030px){
+@media only screen and (min-width: 1000px) and (max-width: 1045px){
 	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
 	.holder1140{width:960px;}
 	.clientContainer,.testimoniaContainer,#teaser {background-attachment: scroll;background-position:top center !important;background-size: cover;}
@@ -2844,7 +2844,7 @@ input[type="checkbox"] + .checkbox-label:empty:before {
 
 
 /* Tablet Portrait size -> standard 960 */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@media only screen and (min-width: 768px) and (max-width: 1144px) {
 	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
 	.holder1140{width:700px;}
 	.clientContainer,.testimoniaContainer,#teaser {background-attachment: scroll;background-position:top center !important;background-size: cover;}
