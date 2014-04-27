@@ -14,21 +14,24 @@
  * @package WordPress
  */
 
-define('WP_HOME','http://hwb.uk.com/blog');
-define('WP_SITEURL','http://hwb.uk.com/blog');
+//define('WP_HOME','http://hwb.uk.com/blog');
+//define('WP_SITEURL','http://hwb.uk.com/blog');
+
+define('WP_HOME','http://vmy.com/blog');
+define('WP_SITEURL','http://vmy.com/blog');
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'hwb_db');
+define('DB_NAME', 'vmy_com');
 
 /** MySQL database username */
-define('DB_USER', 'hwb_db');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'd4BXmtuM');
+define('DB_PASSWORD', '');
 
 /** MySQL hostname */
-define('DB_HOST', 'hwb.mysql.ukraine.com.ua:');
+define('DB_HOST', 'vmy.com');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

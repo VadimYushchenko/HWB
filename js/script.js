@@ -14,7 +14,45 @@ jQuery(window).load(function() {
 
 
 $(document).ready(function(){
-	
+
+
+    var category = $('meta[name=category]').attr("content");
+
+
+        $.getJSON('../content.php?category='+category, {}, function(json){
+        $('#example-4').html('');
+        $.each(json.posts, function(i,post){
+
+        $('#example-4').append('<div class="titleInner"><h1>'+post.title+'</h1></div>');
+
+//                            var container = $('<div>').html(post.content);
+//                            container.find('div.metaslider').replaceWith(function() {return ' '});
+    ////                            .find('p').replaceWith(function() {return " "})
+    //                            $('#example-4').append(container.html());
+    $('#example-4').append(post.excerpt).append("<br/>");
+    });
+
+    });
+
+    var comment = $('meta[name=comment]').attr("content");
+
+    $.getJSON('../content.php?category='+comment, {}, function(json){
+
+        var comment = $('#comment').html('');
+        $.each(json.posts, function(i,post){
+
+        comment.append('<div class="authorBio "><div class="bio clearfix"><div class="bDesc"><h3>'+post.title+'</h3><p>'+post.excerpt+'</p></div></div></div>');
+
+
+        });
+
+    });
+
+
+
+
+
+
 	
 //------------------------------------- Navigation setup ------------------------------------------------//
 
@@ -264,7 +302,7 @@ function isFieldBlank(field){
 formData.append("filecount",document.getElementById('documents1').files.length);
         $.ajax({
             type: "POST",
-            url: 'contact.php',
+            url: '../contact.php',
             data: formData,
             dataType : 'json',
             async : true,
@@ -376,7 +414,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
         formData.append("filecount",document.getElementById('documents2').files.length);
         $.ajax({
             type: "POST",
-            url: 'contact.php',
+            url: '../contact.php',
             data: formData,
             dataType : 'json',
             async : true,
@@ -488,7 +526,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
         formData.append("filecount",document.getElementById('documents3').files.length);
         $.ajax({
             type: "POST",
-            url: 'contact.php',
+            url: '../contact.php',
             data: formData,
             dataType : 'json',
             async : true,
@@ -603,7 +641,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
         formData.append("filecount",document.getElementById('documents4').files.length);
         $.ajax({
             type: "POST",
-            url: 'contact.php',
+            url: '../contact.php',
             data: formData,
             dataType : 'json',
             async : true,
@@ -713,7 +751,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
         formData.append("filecount",document.getElementById('documents5').files.length);
         $.ajax({
             type: "POST",
-            url: 'contact.php',
+            url: '../contact.php',
             data: formData,
             dataType : 'json',
             async : true,
@@ -791,7 +829,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
 //        formData.append("filecount",document.getElementById('documents1').files.length);
         $.ajax({
             type: "POST",
-            url: 'contact.php',
+            url: '../contact.php',
             data: formData,
             dataType : 'json',
             async : true,
@@ -819,7 +857,7 @@ formData.append("filecount",document.getElementById('documents1').files.length);
 
 
     $('#submit').click(function(){
-
+alert('321');
 	$('input#contact_name').removeClass("errorForm");
 	$('textarea#contact_message').removeClass("errorForm");
 	$('input#contact_email').removeClass("errorForm");
@@ -853,27 +891,34 @@ formData.append("filecount",document.getElementById('documents1').files.length);
 		return false;
 	}
 
-	var data_string = $('.contactForm form').serialize(); 
-	
+	var data_string = $('.contactForm form').serialize();
 
+        var formData = new FormData($('#form')[0]);
 	$.ajax({
 		type: "POST",
-		url: $('.contactForm form').attr('action'),
-		data: data_string,
-		
-		success: function(message) {
+		url: '../contact.php',
+		data: formData,
+
+        dataType : 'json',
+        async : true,
+        processData: false,  // tell jQuery not to process the data
+        contentType: false,   // tell jQuery not to set contentType
+        error : function(request){
+            console.log(request.responseText);
+            console.debug(request);
+        },
+        success: function(message) {
             alert('Your message has been sent. Thank you!');
-//				if(message == 'SENDING'){
-//					$('#success').fadeIn('slow');
-//				}
-//				else{
-//					$('#error').fadeIn('slow');
-//				}
-					}
-					
-					
-					
-	});
+            removeModalHandler("modal-6");
+
+//                if(message == 'SENDING'){
+//                    $('#success').fadeIn('slow');
+//                }
+//                else{
+//                    $('#error').fadeIn('slow');
+//                }
+        }
+    });
 
 	return false; 
 });
