@@ -16,6 +16,22 @@ jQuery(window).load(function() {
 $(document).ready(function(){
 
 
+    var id = $('meta[name=content]').attr("content");
+
+
+    $.getJSON('../content.php?id='+id, {}, function(post){
+
+        $('#content').html('');
+
+            $('#title').append('<h1>'+post.title+'</h1>');
+
+//                            var container = $('<div>').html(post.content);
+//                            container.find('div.metaslider').replaceWith(function() {return ' '});
+            ////                            .find('p').replaceWith(function() {return " "})
+            //                            $('#example-4').append(container.html());
+            $('#content').append(post.content);
+        });
+
     var category = $('meta[name=category]').attr("content");
 
 
