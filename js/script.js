@@ -39,7 +39,7 @@ $(document).ready(function(){
         $('#example-4').html('');
         $.each(json.posts, function(i,post){
 
-        $('#example-4').append('<div class="titleInner"><h1>'+post.title+'</h1></div>');
+        $('#example-4').append('<a href="'+post.URL +'"><div class="titleInner"><h1>'+post.title+'</h1></div></a>');
 
 //                            var container = $('<div>').html(post.content);
 //                            container.find('div.metaslider').replaceWith(function() {return ' '});
@@ -57,7 +57,7 @@ $(document).ready(function(){
         var comment = $('#comment').html('');
         $.each(json.posts, function(i,post){
 
-        comment.append('<div class="authorBio "><div class="bio clearfix"><div class="bDesc"><h3>'+post.title+'</h3><p>'+post.excerpt+'</p></div></div></div>');
+        comment.append('<div class="authorBio "><div class="bio clearfix"><div class="bDesc"><a href="'+post.URL +'"><h3>'+post.title+'</h3></a><p>'+post.excerpt+'</p></div></div></div>');
 
 
         });
